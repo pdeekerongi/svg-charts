@@ -108,13 +108,13 @@
                 new Charts({setSVGWidth: 1000, wrapperId: 'spline', legwrapperId: 'legend2', containerId: 'splinediv'}).Spline(splineSeries, splineDataline);
 
                 //Init data for Line Chart
-                var lineSeries = [{ name : 'Government School',
+                var lineSeries = [{ name : 'Alpha',
                                     color : 'rgba(255, 0, 0, 0.4)',
                                     shape : 'square', 
                                     lineColor : 'rgba(47, 129, 150, 0.22)',
                                     dataPoints : true
                                     },
-                                    {   name : 'Private School',
+                                    {   name : 'Beta',
                                     color : 'rgba(0, 102, 255, 0.3)',
                                     shape : 'circle',
                                     lineColor : 'rgba(140, 197, 0, 0.17)'
@@ -168,10 +168,10 @@
 
                 //Init data for Pie Chart
                  var pieData = [{
-                                label: "Accredited Social Health Activist (ASHA)",
+                                label: "A",
                                 value: 60.00
                             },{
-                                label: "AMC for Hospital Equipments",
+                                label: "B",
                                 value: 40.00
                             }];
 
@@ -180,41 +180,17 @@
                 //Init data for Bar Chart
 
                  var barData = [{
-                                label: "New Lapcoli Machine, Anesthesia Machine, Pathlogy Machine for STNM Hospital",
+                                label: "Label1",
                                 value: 800.00
                             },{
-                                label: "New Lapcoli Machine, Anesthesia Machine, Pathlogy Machine for STNM Hospital",
+                                label: "Label2",
                                 value: 120.00
                             },{
-                                label: "New Lapcoli Machine, Anesthesia Machine, Pathlogy Machine for STNM Hospital",
+                                label: "Label3",
                                 value: 400.00
                             },{
-                                label: "Construction of 575 bedded super speciality hospital",
+                                label: "Label4",
                                 value: 16000.00
-                            },{
-                                label: "Construction of Pharmacy College at Sajong, Rumtek in East Sikkim",
-                                value: 400.00
-                            },{
-                                label: "CT Scan Liability",
-                                value: 200.00
-                            },{
-                                label: "Wages",
-                                value: 200.00
-                            },{
-                                label: "Othe Misc. Expd. (Pol\/ TA\/O E c)",
-                                value: 100.46
-                            },{
-                                label: "New Lapcoli Machine, Anesthesia Machine, Pathlogy Machine for STNM Hospital",
-                                value: 120.00
-                            },{
-                                label: "New Lapcoli Machine, Anesthesia Machine, Pathlogy Machine for STNM Hospital",
-                                value: 12240.00
-                            },{
-                                label: "New Lapcoli Machine, Anesthesia Machine, Pathlogy Machine for STNM Hospital",
-                                value: 28.00
-                            },{
-                                label: "New Lapcoli Machine, Anesthesia Machine, Pathlogy Machine for STNM Hospital",
-                                value: 936.00
                             }];
 
                 new Charts({setSVGWidth: 1000 , legwrapperId: 'legend5', wrapperId: 'bar'}).Bar(barData);
@@ -256,7 +232,7 @@
                                         }]    
                                 }];                
 
-                new Charts({setSVGWidth: 980, labelX: 'INCOME (Progress)', labelY: 'IMR', maxX: 200000, maxY: 50, unitsPerTickX: 20000, unitsPerTickY: 5, wrapperId: 'kuznet', legwrapperId: 'legend6', containerId: 'kuznetdiv'}).Kuznet(kuznet, kuznetDataline); 
+                new Charts({setSVGWidth: 980, labelX: 'X-axis', labelY: 'Y-axis', maxX: 200000, maxY: 50, unitsPerTickX: 20000, unitsPerTickY: 5, wrapperId: 'kuznet', legwrapperId: 'legend6', containerId: 'kuznetdiv'}).Kuznet(kuznet, kuznetDataline); 
 
                 //Init data for Kuznet Chart
                 var kuznetSeries = [{ name : 'Female',
