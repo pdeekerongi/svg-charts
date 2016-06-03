@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>SVG Charts</title>
+        <style type="text/css">
+            h1{
+                margin-left: 20px;
+            }
+        </style>
+        <script src="jquery-1.8.3.min.js"></script>
+        <script src="raphael-min.js"></script>
+        <script src="chartsvn.js"></script>
+        <script>
+            $(document).ready(function(){
+
+               //Init data for Scatter Chart
+                var scatterSeries = [{ name : 'Female',
+                                    color : 'rgba(255, 0, 0, 0.4)',
+                                    shape : 'square',
+                                    data : [[20, 50],[25,30],[50,80],[110,120],[9,7],[17,13],[15,18],
+                                            [15,12],[12,7],[4,16],[28,32],[29,35],[30,29],[30,31],
+                                            [31,33],[32,39],[40,41],[42,45],[47,47],[91,90],[51,58],
+                                            [63,67],[61,69],[65,71],[68,69]]
+                                },
+                                {   name : 'Male',
+                                    color : 'rgba(0, 102, 255, 0.3)',
+                                    shape : 'circle', 
+                                    data : [[6, 13],[8,12],[8,16],[10,12],[16,16],[17,19],[19,18],
+                                            [21,22],[25,27],[24,29],[26,32],[28,35],[33,23],[35,31],
+                                            [33,39],[35,33],[39,44],[44,42],[48,48],[63,67],[64,69],
+                                            [68,67],[55,53],[71,76],[75,75]]
+                                }];
+
+                new Charts({setSVGWidth: 1000, wrapperId: 'scatter', legwrapperId: 'legend1', containerId: 'scatterdiv'}).Scatter(scatterSeries);
+
+
+
+
+                //Init data for Spline Chart
+                var splineSeries = [{ name : 'Male',
+                                    color : 'rgba(255, 0, 0, 0.4)',
+                                    shape : 'square', 
+                                    lineColor : 'rgba(47, 129, 150, 0.22)'
+                                    },
+                                {   name : 'Female',
+                                    color : 'rgba(0, 102, 255, 0.3)',
+                                    shape : 'circle',
+                                    lineColor : 'rgba(140, 197, 0, 0.17)'
+                                }]
+
+                var splineDataline = [{dataPoints : [{ x: 0,
+                                            y: 0
+                                        }, {
+                                            x: 20,
+                                            y: 20
+                                        }, {
+                                            x: 35,
+                                            y: 25
+                                        }, {
+                                            x: 26,
+                                            y: 32
+                                        }, {
+                                            x: 47,
+                                            y: 40
+                                        }, {
+                                            x: 42,
+                                            y: 47
+                                        }, {
+                                            x: 65,
+                                            y: 68
+                                        }, {
+                                            x: 85,
+                                            y: 88
+                                        }, {
+                                            x: 110,
+                                            y: 120
+                                        }]    
+                                },
+                                    {dataPoints : [{ x: 0,
+                                                y: 0
+                                            }, {
+                                                x: 5,
+                                                y: 40
+                                            }, {
+                                                x: 15,
+                                                y: 70
+                                            }, {
+                                                x: 25,
+                                                y: 90
+                                            }, {
+                                                x: 36,
+                                                y: 110
+                                            }, {
+                                                x: 55,
+                                                y: 125
+                                            }, {
+                                                x: 68,
+                                                y: 135
+                                            }, {
+                                                x: 75,
+                                                y: 100
+                                            }, {
+                                                x: 120,
+                                                y: 30
+                                            }]    
+                                    }];                
+
+                new Charts({setSVGWidth: 1000, wrapperId: 'spline', legwrapperId: 'legend2', containerId: 'splinediv'}).Spline(splineSeries, splineDataline);
+
+                //Init data for Line Chart
+                var lineSeries = [{ name : 'Government School',
+                                    color : 'rgba(255, 0, 0, 0.4)',
+                                    shape : 'square', 
+                                    lineColor : 'rgba(47, 129, 150, 0.22)',
+                                    dataPoints : true
+                                    },
+                                    {   name : 'Private School',
+                                    color : 'rgba(0, 102, 255, 0.3)',
+                                    shape : 'circle',
+                                    lineColor : 'rgba(140, 197, 0, 0.17)'
+                                }]
+
+                var linedataline = [{dataPoints : [{ x: 1,
+                                            y: 300,
+                                            label: "2007-2008"
+                                        }, {
+                                            x: 2,
+                                            y: 720,
+                                            label: "2008-2009"
+                                        }, {
+                                            x: 3,
+                                            y: 125,
+                                            label: "2009-2010"
+                                        }, {
+                                            x: 4,
+                                            y: 332,
+                                            label: "2010-2011"
+                                        }, {
+                                            x: 5,
+                                            y: 840,
+                                            label: "2011-2012"
+                                        }]
+                                    },
+                                    {dataPoints : [{ x: 1,
+                                            y: 120,
+                                            label: "2007-2008"
+                                        }, {
+                                            x: 2,
+                                            y: 570,
+                                            label: "2008-2009"
+                                        }, {
+                                            x: 3,
+                                            y: 725,
+                                            label: "2009-2010"
+                                        }, {
+                                            x: 4,
+                                            y: 332,
+                                            label: "2010-2011"
+                                        }, {
+                                            x: 5,
+                                            y: 940,
+                                            label: "2011-2012"
+                                        }]
+
+                                }];        
+
+                new Charts({setSVGWidth: 1000, wrapperId: 'line', maxY: 1000, maxX: 5, unitsPerTickX: 1, unitsPerTickY:100, legwrapperId: 'legend3', containerId: 'linediv'}).Line(lineSeries, linedataline);
+
+                //Init data for Pie Chart
+                 var pieData = [{
+                                label: "Accredited Social Health Activist (ASHA)",
+                                value: 60.00
+                            },{
+                                label: "AMC for Hospital Equipments",
+                                value: 40.00
+                            }];
+
+                new Charts({setSVGWidth: 1000, wrapperId: 'pie', legwrapperId: 'legend4', containerId: 'piediv'}).Pie(pieData); 
+                
+                //Init data for Bar Chart
+
+                 var barData = [{
+                                label: "New Lapcoli Machine, Anesthesia Machine, Pathlogy Machine for STNM Hospital",
+                                value: 800.00
+                            },{
+                                label: "New Lapcoli Machine, Anesthesia Machine, Pathlogy Machine for STNM Hospital",
+                                value: 120.00
+                            },{
+                                label: "New Lapcoli Machine, Anesthesia Machine, Pathlogy Machine for STNM Hospital",
+                                value: 400.00
+                            },{
+                                label: "Construction of 575 bedded super speciality hospital",
+                                value: 16000.00
+                            },{
+                                label: "Construction of Pharmacy College at Sajong, Rumtek in East Sikkim",
+                                value: 400.00
+                            },{
+                                label: "CT Scan Liability",
+                                value: 200.00
+                            },{
+                                label: "Wages",
+                                value: 200.00
+                            },{
+                                label: "Othe Misc. Expd. (Pol\/ TA\/O E c)",
+                                value: 100.46
+                            },{
+                                label: "New Lapcoli Machine, Anesthesia Machine, Pathlogy Machine for STNM Hospital",
+                                value: 120.00
+                            },{
+                                label: "New Lapcoli Machine, Anesthesia Machine, Pathlogy Machine for STNM Hospital",
+                                value: 12240.00
+                            },{
+                                label: "New Lapcoli Machine, Anesthesia Machine, Pathlogy Machine for STNM Hospital",
+                                value: 28.00
+                            },{
+                                label: "New Lapcoli Machine, Anesthesia Machine, Pathlogy Machine for STNM Hospital",
+                                value: 936.00
+                            }];
+
+                new Charts({setSVGWidth: 1000 , legwrapperId: 'legend5', wrapperId: 'bar'}).Bar(barData);
+
+                 //Init data for Kuznet Chart
+                var kuznet = [{ name : 'Year',
+                                color : 'rgba(255, 0, 0, 0.4)',
+                                shape : 'circle', 
+                                lineColor : 'rgba(47, 129, 150, 0.22)',
+                                dataPoints : false 
+                                }]
+
+                var kuznetDataline = [{dataPoints : [{ x: 0,
+                                            y: 0,
+                                            label: "-"
+                                        },{ x: 42693,
+                                            y: 34,
+                                            label: "2007-08"
+                                        }, {
+                                            x: 54270,
+                                            y: 33,
+                                            label: "2008-09"
+                                        }, {
+                                            x: 101873,
+                                            y: 33,
+                                            label: "2009-10"
+                                        }, {
+                                            x: 121701,
+                                            y: 30,
+                                            label: "2010-11"
+                                        }, {
+                                            x: 139647,
+                                            y: 26,
+                                            label: "2011-12"
+                                        }, {
+                                            x: 159816,
+                                            y: 26,
+                                            label: "2012-13"
+                                        }]    
+                                }];                
+
+                new Charts({setSVGWidth: 980, labelX: 'INCOME (Progress)', labelY: 'IMR', maxX: 200000, maxY: 50, unitsPerTickX: 20000, unitsPerTickY: 5, wrapperId: 'kuznet', legwrapperId: 'legend6', containerId: 'kuznetdiv'}).Kuznet(kuznet, kuznetDataline); 
+
+                //Init data for Kuznet Chart
+                var kuznetSeries = [{ name : 'Female',
+                                    color : 'rgba(255, 0, 0, 0.4)',
+                                    shape : 'diamond', // other shapes include square, squareFill, diamond, diamondfill, circle, circleFill
+                                    data : [[20, 50],[25,30],[50,80],[110,120],[9,7],[17,13],[15,18],
+                                            [15,12],[12,7],[4,16],[28,32],[29,35],[30,29],[30,31],
+                                            [31,33],[32,39],[40,41],[42,45],[47,47],[91,90],[51,58],
+                                            [63,67],[61,69],[65,71],[68,69]],
+                                    lineColor : 'rgba(47, 129, 150, 0.22)'        
+                                },
+                                {   name : 'Male',
+                                    color : 'rgba(0, 102, 255, 0.3)',
+                                    shape : 'circle', 
+                                    data : [[6, 13],[8,12],[8,16],[10,12],[16,16],[17,19],[19,18],
+                                            [21,22],[25,27],[24,29],[26,32],[28,35],[33,23],[35,31],
+                                            [33,39],[35,33],[39,44],[44,42],[48,48],[63,67],[64,69],
+                                            [68,67],[55,53],[71,76],[75,75]],
+                                    lineColor : 'rgba(140, 197, 0, 0.17)'        
+                                }];
+
+                var kuznetDataline = [{dataPoints : [{ x: 0,
+                                                        y: 0
+                                                    }, {
+                                                        x: 20,
+                                                        y: 20
+                                                    }, {
+                                                        x: 35,
+                                                        y: 25
+                                                    }, {
+                                                        x: 26,
+                                                        y: 32
+                                                    }, {
+                                                        x: 47,
+                                                        y: 40
+                                                    }, {
+                                                        x: 42,
+                                                        y: 47
+                                                    }, {
+                                                        x: 65,
+                                                        y: 68
+                                                    }, {
+                                                        x: 85,
+                                                        y: 88
+                                                    }, {
+                                                        x: 110,
+                                                        y: 120
+                                                    }]    
+                                            },
+                                            {dataPoints : [{ x: 0,
+                                                        y: 0
+                                                    }, {
+                                                        x: 15,
+                                                        y: 20
+                                                    }, {
+                                                        x: 20,
+                                                        y: 25
+                                                    }, {
+                                                        x: 29,
+                                                        y: 32
+                                                    }, {
+                                                        x: 36,
+                                                        y: 40
+                                                    }, {
+                                                        x: 39,
+                                                        y: 47
+                                                    }, {
+                                                        x: 55,
+                                                        y: 68
+                                                    }, {
+                                                        x: 67,
+                                                        y: 88
+                                                    }, {
+                                                        x: 79,
+                                                        y: 120
+                                                    }]    
+                                            }];  
+
+
+                new Charts({setSVGWidth: 980, wrapperId: 'kuznet-scatter', legwrapperId: 'legend7', containerId: 'kuznetscatterdiv'}).KuznetSc(kuznetSeries, kuznetDataline);                
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Scatter Chart</h1>
+        <div id="scatter"></div>
+        <div id="legend1"></div>
+        <h1>Spline Chart</h1>
+        <div id="spline"></div>
+        <div id="legend2"></div>
+        <h1>Line Chart</h1>
+        <div id="line"></div>
+        <div id="legend3"></div>
+        <h1>Pie Chart</h1>
+        <div id="pie"></div>
+        <div id="legend4"></div>
+        <h1>Bar Chart</h1>
+        <div id="bar"></div>
+        <div id="legend5"></div>
+        <h1>Kuznet Chart</h1>
+        <div id="kuznet"></div>
+        <div id="legend6"></div>
+        <h1>Kuznet(scatter) Chart</h1>
+        <div id="kuznet-scatter"></div>
+        <div id="legend7"></div>
+    </body>
+</html>
